@@ -10,11 +10,11 @@ describe('say', () => {
     expect(say.inEnglish(1)).toBe('one')
   })
 
-  xit('fourteen', () => {
+  it('fourteen', () => {
     expect(say.inEnglish(14)).toBe('fourteen')
   })
 
-  xit('twenty', () => {
+  it('twenty', () => {
     expect(say.inEnglish(20)).toBe('twenty')
   })
 

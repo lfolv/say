@@ -1,31 +1,39 @@
+const numbers = {
+  "twenty": 20,
+  "nineteen": 19,
+  "eighteen": 18,
+  "seventeen": 17,
+  "sixteen": 16,
+  "fifteen": 15,
+  "fourteen": 14,
+  "thirteen": 13,
+  "twelve": 12,
+  "eleven": 11,
+  "ten": 10,
+  'nine': 9,
+  'eight': 8,
+  'seven': 7,
+  'six': 6,
+  'five': 5,
+  'four': 4,
+  'three': 3,
+  'two': 2,
+  'one': 1
+}
+
 export default class Say {
   inEnglish(n: number) {
     if (n === 0) {
       return 'zero'
     }
 
-    let result = ''
+    let result = ""
 
-    if (n === 9) {
-      result += 'nine'
-    } else if (n === 8) {
-      result += 'eight'
-    } else if (n === 7) {
-      result += 'seven'
-    } else if (n === 6) {
-      result += 'six'
-    } else if (n === 5) {
-      result += 'five'
-    } else if (n === 4) {
-      result += 'four'
-    } else if (n === 3) {
-      result += 'three'
-    } else if (n === 2) {
-      result += 'two'
-    } else if (n === 1) {
-      result += 'one'
-    } else {
-      result += 'zero'
+    for (const [valueInEnglish, realValue] of Object.entries(numbers)) {
+      if (n > 0 && n % realValue === 0) {
+        n -= realValue
+        result += valueInEnglish
+      }
     }
 
     return result
